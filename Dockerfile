@@ -16,6 +16,6 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.11-Linux-x86
 
 RUN conda install -y faiss-gpu=1.6.1 cudatoolkit=10.0 -c pytorch
 RUN conda install -y rdkit -c conda-forge
-RUN pip install ann_solo
+RUN pip install ann_solo matplotlib-venn Levenshtein seaborn
 
 RUN apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/*
