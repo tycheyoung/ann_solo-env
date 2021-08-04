@@ -4,7 +4,7 @@ ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
 
 RUN apt-get update --fix-missing && \
-    apt-get install -y wget bzip2 ca-certificates curl git vim default-jre libbz2-dev zlib1g-dev
+    apt-get install -y wget bzip2 ca-certificates curl git vim default-jre libbz2-dev zlib1g-dev libgd-dev
 
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.11-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
