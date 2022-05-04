@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.0-devel-ubuntu18.04
+FROM nvidia/cuda:10.2-devel-ubuntu18.04
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
@@ -14,7 +14,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py37_4.10.3-Linu
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo "conda activate base" >> ~/.bashrc
 
-RUN conda install -y faiss-gpu=1.7.1 cudatoolkit=11.0 -c pytorch
+RUN conda install -y faiss-gpu=1.6.5 cudatoolkit=10.2 -c pytorch  # 1.7.1 with 11.0 causes OOM issue
 RUN conda install -y rdkit -c rdkit
 RUN pip install ann-solo matplotlib-venn Levenshtein seaborn
 
